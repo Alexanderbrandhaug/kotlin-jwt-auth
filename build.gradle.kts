@@ -8,18 +8,19 @@ val commons_codec_version: String by project
 //mainClassName = "io.ktor.server.netty.EngineMain"
 group = "com.example"
 version = "0.0.1"
-application {
-   mainClass.set("com.example.ktor-jwt-auth.ApplicationKt")
-
-    val isDevelopment: Boolean = project.ext.has("development")
-    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
-}
 
 plugins {
     application
     kotlin("jvm") version "1.6.21"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.6.21"
-    id("com.github.johnrengelman.shadow") version "5.2.0"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+}
+
+application {
+   mainClass.set("com.example.ktor-jwt-auth.ApplicationKt")
+
+    val isDevelopment: Boolean = project.ext.has("development")
+    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
 repositories {
