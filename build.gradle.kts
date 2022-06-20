@@ -5,11 +5,11 @@ val kmongo_version: String by project
 val commons_codec_version: String by project
 
 
-mainClassName = "io.ktor.server.netty.EngineMain"
+//mainClassName = "io.ktor.server.netty.EngineMain"
 group = "com.example"
 version = "0.0.1"
 application {
-   mainClass.set("io.ktor.server.netty.EngineMain")
+   mainClass.set("com.example.ktor-jwt-auth.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
